@@ -1,0 +1,45 @@
+
+# indicate platforms you need your program to run on.
+# supported platforms:
+# - linux-x86
+# - linux-x86_64
+# - osx
+#
+platforms 'linux-x86_64'
+
+# create handy wrappers to run your app.
+#
+# 1) first argument is the name of the file to be created.
+#
+# 2) second argument is the Ruby version to be used by wrapper.
+#    supported Ruby versions:
+#    - 2.1.5
+#    - 2.2.0
+#
+# 3) third argument will be used to run your program.
+#    it can be a command or a file and will be used like:
+#    /path/to/ruby -r bundler/setup  your-file-or-command
+#
+# @note: MULTIPLE wrappers can be defined each using a specific Ruby version
+#
+# @note: files and commands will be executed in the folder the wrapper resides in
+#
+# @note: you can comment this option if you do not need any wrappers
+#
+# @example  create "run" file that will execute "app.rb" on Ruby 2.1.5
+#   wrapper :run, '2.1.5', 'app.rb'
+#
+# @example  create "run" file that will run `puma` on Ruby 2.2.0
+#   wrapper :run, '2.2.0', 'puma'
+#
+# @example  create two wrappers, one running on Ruby 2.2.0 and another on 2.1.5
+#   wrapper :run22, '2.2.0', 'puma'
+#   wrapper :run21, '2.1.5', 'puma'
+#
+wrapper :run, '2.1.5', 'your command or file here'
+
+# the folder Ruby runtimes will be installed into.
+folder_name 'traveler'
+
+# see versions at http://traveling-ruby.s3-us-west-2.amazonaws.com/list.html
+traveling_ruby_version '20150210'
