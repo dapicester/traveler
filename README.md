@@ -33,10 +33,10 @@ Traveler acts inside your app folder. It creates a `Travelfile` file and the `tr
 
 `Travelfile` is a Ruby file containing few configurations:
 
-    - `platforms`:  specify what platforms your app should run on
-    - `wrapper`: define wrapper(s) that will allow to easily run your app
-    - `folder_name`: name of the folder that will hold the builds
-    - `traveling_ruby_version`: what version of Traveling Ruby to be used for builds
+- `platforms`  specify what platforms your app should run on
+- `wrapper` define wrapper(s) that will allow to easily run your app
+- `folder_name` name of the folder that will hold the builds
+- `traveling_ruby_version` what version of Traveling Ruby to be used for builds
 
 And that's pretty all about configuration.
 
