@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.version       = version
   spec.authors       = ['Slee Woo']
   spec.email         = ['mail@sleewoo.com']
-  spec.description   = 'A nifty wrapper for Traveling Ruby'
+  spec.description   = 'Easily embrace Traveling Ruby awesomeness'
   spec.summary       = [name, version]*'-'
   spec.homepage      = 'https://github.com/sleewoo/' + name
   spec.license       = 'MIT'
