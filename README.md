@@ -1,8 +1,7 @@
 
-# Traveler
-**A nifty wrapper for Traveling Ruby**
+## Traveler
 
-Easily distribute your Ruby app to any Linux and/or OS X.
+**Easily distribute your Ruby apps to any Linux and/or OS X.**
 
 Traveler is about doing all hard work on packaging your Ruby apps into self-running containers using [Traveling Ruby](http://phusion.github.io/traveling-ruby/).
 
