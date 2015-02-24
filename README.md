@@ -10,7 +10,7 @@ Here are some [introductory materials](https://github.com/phusion/traveling-ruby
 
 **Ok, what do i need to use Traveler?**
 
-You'll need Ruby 2.1.x or 2.2.x installed on your system.
+You'll need Ruby 2.1.x or 2.2.x on a Linux or OS X machine ([no windows support for now](https://github.com/sleewoo/traveler/issues/2)).
 
 Why so?
 
