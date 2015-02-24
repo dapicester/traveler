@@ -28,7 +28,7 @@ make sure to run `rbenv rehash` is you are using rbenv.
 
 ## Use
 
-Traveler acts inside your app folder. It creates a `Travelfile` file and the `traveler` folder (configurable).
+Traveler acts inside your app folder. It creates a `Travelfile` file and the `traveler` folder.
 
 `Travelfile` is a Ruby file containing few configurations:
 
