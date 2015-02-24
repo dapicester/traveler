@@ -28,13 +28,13 @@ make sure to run `rbenv rehash` is you are using rbenv.
 
 ## Use
 
-Traveler acts inside your app folder. It creates a `Travelfile` file and the `traveler` folder(name is configurable).
+Traveler acts inside your app folder. It creates a `Travelfile` file and the `traveler` folder (configurable).
 
 `Travelfile` is a Ruby file containing few configurations:
 
 - `platforms`  specify what platforms your app should run on
 - `wrapper` define wrapper(s) that will allow to easily run your app
-- `folder_name` name of the folder that will hold the builds
+- `folder_name` name of the folder that will hold the builds (`traveler` by default)
 - `traveling_ruby_version` what version of Traveling Ruby to be used for builds
 
 And that's pretty all about configuration.
