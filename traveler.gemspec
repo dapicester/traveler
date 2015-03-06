@@ -1,6 +1,6 @@
 # coding: utf-8
 
-name, version = 'traveler 0.0.1'.split
+name, version = 'traveler 0.1.0'.split
 Gem::Specification.new do |spec|
   spec.name          = name
   spec.version       = version
