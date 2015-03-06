@@ -33,7 +33,7 @@ Traveler acts inside your app folder. It creates a `Travelfile` file and the `tr
 `Travelfile` is a Ruby file containing few configurations:
 
 - `platforms`  specify what platforms your app should run on
-- `wrapper` define wrapper(s) that will allow to easily run your app
+- `wrapper` [define wrapper(s)](https://github.com/sleewoo/traveler/blob/master/skel/Travelfile#L12) that easily run your app
 - `folder_name` name of the folder that will hold the builds
 - `traveling_ruby_version` what version of Traveling Ruby to be used for builds
 
@@ -69,6 +69,16 @@ And if you switch to Ruby 2.2.x, Traveler will build a 2.2.0 runtime, without to
 So you can have multiple Ruby versions with same app.
 
 To make use of them simply define multiple wrappers, each using a specific Ruby version.
+
+## Rewrapping
+
+Sometimes you need to rebuild wrappers without actually rebuild the runtime/gems.
+
+For this simply run:
+
+`traveler wrap`
+
+It will reread your wrappers in Travelfile and rebuild them accordingly.
 
 ## Contributors are highly welcome!
 

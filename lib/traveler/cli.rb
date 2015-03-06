@@ -13,10 +13,17 @@ module Traveler
 
     desc 'build', "Build runtime for platforms specified in #{CONFIGFILE}"
     def build
-      require 'traveler/build'
+      load_configs
       build_world
       generate_wrappers
       puts '', bold_success(SUCCESS_ICONS.sample, '  All Done! You are ready to rock!')
+    end
+
+    desc 'wrap', 'Only (re)build wrappers without '
+    def wrap
+      load_configs
+      generate_wrappers
+      puts bold_success(SUCCESS_ICONS.sample, '  Done!')
     end
 
     private
@@ -38,11 +45,12 @@ module Traveler
     end
 
     def generate_wrappers
-      return if WRAPPERS.empty?
+      return puts('', warn("  No wrappers defined in #{CONFIGFILE}"), '') if WRAPPERS.empty?
       puts '', warn(:wrapping.icon, '  Wrapping...')
       Dir.chdir Traveler.appdir do
-        WRAPPERS.each_pair do |name,(cmd_or_file,ruby_version)|
-          Wrapper.new(name, cmd_or_file, ruby_version)
+        WRAPPERS.each_pair do |name,(ruby_version,cmd_or_file,block)|
+          puts warn('   (re)building "%s" wrapper...' % name)
+          Wrapper.new(ruby_version, name, cmd_or_file, block)
         end
       end
     end
@@ -73,6 +81,10 @@ module Traveler
 
     def configfile_exists?
       File.exists?(CONFIGFILE_PATH)
+    end
+
+    def load_configs
+      require 'traveler/config'
     end
   end
 end

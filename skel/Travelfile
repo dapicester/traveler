@@ -18,7 +18,20 @@ platforms 'linux-x86_64'
 #
 # 3) third argument will be used to run your program.
 #    it can be a command or a file and will be used like:
-#    /path/to/ruby -r bundler/setup  your-file-or-command
+#    `exec /path/to/ruby -r bundler/setup  your-file-or-command`
+#    However this can be omitted if providing a block.
+#
+# 4)  A optional block.
+#     If given, returned string will be used as a un-prefixed cmd.
+#     Useful when you need full control over cmd to run.
+#     Will run like:
+#     `exec your-command-here`
+#
+# @note:  use $RUBY_ROOT to refer to the Ruby installation folder,
+#         e.g. '$RUBY_ROOT/bin/bundler'
+#         IMPORTANT: make sure to use it inside single quotes - '$RUBY_ROOT'
+#         or escape it if using inside double quotes - "\$RUBY_ROOT"
+#         Otherwise it will refer to a Ruby global variable and make your wrapper unusable.
 #
 # @note: MULTIPLE wrappers can be defined each using a specific Ruby version
 #
@@ -27,14 +40,20 @@ platforms 'linux-x86_64'
 # @note: you can comment this option if you do not need any wrappers
 #
 # @example  create "run" file that will execute "app.rb" on Ruby 2.1.5
+#           will run like:
+#           `exec "$RUBY_ROOT/bin/ruby" -r bundler/setup app.rb`
+#
 #   wrapper :run, '2.1.5', 'app.rb'
 #
 # @example  create "run" file that will run `puma` on Ruby 2.2.0
-#   wrapper :run, '2.2.0', 'puma'
+#
+#   wrapper :run, '2.2.0' do
+#     "\$RUBY_ROOT/bin/bundler exec puma"
+#   end
 #
 # @example  create two wrappers, one running on Ruby 2.2.0 and another on 2.1.5
-#   wrapper :run22, '2.2.0', 'puma'
-#   wrapper :run21, '2.1.5', 'puma'
+#   wrapper :run22, '2.2.0', 'config.ru'
+#   wrapper :run21, '2.1.5', 'config.ru'
 #
 wrapper :run, '2.1.5', 'your command or file here'
 

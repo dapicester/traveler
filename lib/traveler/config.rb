@@ -28,9 +28,9 @@ module Traveler
       OPTED_PLATFORMS.concat(platforms)
     end
 
-    def wrapper name, ruby_version, cmd_or_file
+    def wrapper name, ruby_version, cmd = nil, &block
       assert_ruby_version_supported!(ruby_version, caller[0])
-      WRAPPERS[name.to_s.freeze] = [cmd_or_file, ruby_version].map(&:to_s)
+      WRAPPERS[name.to_s.freeze] = [ruby_version.to_s.freeze, cmd.to_s.freeze, block].freeze
     end
 
     def traveling_ruby_version version
@@ -43,3 +43,9 @@ module Traveler
     end
   end
 end
+
+require 'traveler/prerequisites'
+require 'traveler/runtime'
+require 'traveler/bundler'
+require 'traveler/gem'
+require 'traveler/wrapper'
