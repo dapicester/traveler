@@ -24,14 +24,15 @@ module Traveler
 
   RUBY_VERSIONS = %w[
     2.1.5
+    2.1.6
     2.2.0
+    2.2.2
   ].freeze
 
   TRAVELING_RUBY_VERSIONS = %w[
     20150210
-    20150210
-    20150204
     20150517
+    20150715
   ].freeze
 
   PLATFORMS = %w[
