@@ -3,7 +3,7 @@ module Traveler
   if v = RUBY_VERSIONS.find {|v| v.to_f == RUBY_VERSION.to_f}
     EFFECTIVE_RUBY_VERSION = v
   else
-    assert_ruby_version_supported!(RUBY_VERSION)
+    Config.assert_ruby_version_supported!(RUBY_VERSION)
   end
 
   [
