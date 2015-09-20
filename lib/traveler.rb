@@ -31,12 +31,14 @@ module Traveler
     20150210
     20150210
     20150204
+    20150517
   ].freeze
 
   PLATFORMS = %w[
     linux-x86
     linux-x86_64
     osx
+    win32
   ].freeze
 
   OPTED_PLATFORMS = []
