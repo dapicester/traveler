@@ -18,7 +18,8 @@ module Traveler
     def install
       FileUtils.rm_rf('vendor')
       FileUtils.cp(GEMFILE_PATH, '.')
-      sh('BUNDLE_IGNORE_CONFIG=1 "%s" install --path vendor --without development' % BUNDLER)
+      # TODO: add config parameter BUNDLER_WITHOUT_GROUPS
+      sh('BUNDLE_IGNORE_CONFIG=1 "%s" install --path vendor --without development:test' % BUNDLER)
     end
 
     def clean
@@ -28,6 +29,7 @@ module Traveler
       sh('"%s" vendor/ruby/*/gems -name "*.so"     | xargs rm -f' % FIND)
       sh('"%s" vendor/ruby/*/gems -name "*.bundle" | xargs rm -f' % FIND)
       sh('"%s" vendor/ruby/*/gems -name "*.o"      | xargs rm -f' % FIND)
+      # TODO: clean more
     end
 
     def install_extensions

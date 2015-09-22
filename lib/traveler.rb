@@ -22,18 +22,23 @@ module Traveler
   GEMFILE_PATH = File.join(PWD, GEMFILE)
   GEMFILE_SKEL = skeldir(GEMFILE)
 
-  RUBY_VERSIONS = %w[
-    2.1.5
-    2.1.6
-    2.2.0
-    2.2.2
+  TRAVELING_RUBY_VERSIONS = %w[
+    20150715-2.2.2
+    20150715-2.1.6
+    20150517-2.2.2
+    20150517-2.1.6
+    20150210-2.2.0
+    20150210-2.1.5
+    20150204-2.1.5
+    20150130-2.1.5
+    20141224-2.1.5
+    20141219-2.1.5
+    20141215-2.1.5
+    20141213-2.1.5
+    20141209-2.1.5
   ].freeze
 
-  TRAVELING_RUBY_VERSIONS = %w[
-    20150210
-    20150517
-    20150715
-  ].freeze
+  RUBY_VERSIONS = TRAVELING_RUBY_VERSIONS.map { |v| v.split('-').last }.sort.uniq.freeze
 
   PLATFORMS = %w[
     linux-x86
