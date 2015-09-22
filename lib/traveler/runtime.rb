@@ -1,7 +1,7 @@
 module Traveler
   class Runtime
     include Util
-    BASENAME_FORMAT = 'traveling-ruby-%s-%s-%s'.freeze
+    BASENAME_FORMAT = 'traveling-ruby-%s-%s'.freeze
     EXTENSION = '.tar.gz'.freeze
 
     def initialize platform
@@ -16,7 +16,6 @@ module Traveler
     def basename
       BASENAME_FORMAT % [
         TRAVELING_RUBY_VERSION,
-        EFFECTIVE_RUBY_VERSION,
         @platform
       ]
     end
